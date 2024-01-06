@@ -1,8 +1,9 @@
- import * as React from 'react';
+import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
- import Button from '@mui/material/Button'; 
 import CssBaseline from '@mui/material/CssBaseline';
+
+ import Button from '@mui/material/Button'; 
 import Grid from '@mui/material/Grid';
 import Face3Icon from '@mui/icons-material/Face3';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,18 +14,13 @@ import Container from '@mui/material/Container';
  import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-
+import Chip from '@mui/material/Chip';
+ 
+ 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function App() {
+export default function Skillsection() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -39,48 +35,56 @@ export default function App() {
           
           <nav>
 
-          <Stack               sx={{ mt: 2, mb: 3 }}             
- direction="row" spacing={2}>
-    <Link to={`skill`}>
-  <Item variant="text"
-              color="text.secondary"
-              sx={{ mt: 2 }}             >
-            Skills
-              </Item></Link>
-              <Link to={`contact`}>
-  <Item  variant="text"
-              color="text.secondary"
-              sx={{ mt: 2  }}
-             >
-
-              Contact Me 
-           </Item></Link>
-           <Link to={`portfolio`}>
-  <Item variant="text"
-               color="text.secondary"
-              sx={{ mt: 2  }}             >
-             portfolio
-           </Item></Link>
-</Stack>
- 
+           
+             
+            
+             
           </nav>
         
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
       <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
-        <Typography
+      <Typography
           component="h1"
           variant="h2"
           align="center"
           color="text.primary"
           gutterBottom
         >
-          Hi, I'm Nancy Jha. I design and build User Interfaces :)
-         </Typography>
+SKILLS        </Typography>
         <Typography variant="h5" align="center" color="text.secondary" component="p">
-        I have been developing my skills in react since the past 1 year and I've developed a strong understanding of web development concepts which enables me to effectively convert designs and wireframes into visually appealing and responsive user interface components. I have experience working in cross-functional teams and can effectively collaborate with backend developers to integrate frontend code with server-side logic. This includes handling data fetching, authentication, and implementing business logic on the client-side.
+        Below is list of technology I've worked with. Please note that I don't claim to be the master of all of these skills
         </Typography>
+           <Stack sx={{ mt: 2, mb: 2 }}  direction="row" spacing={2}>
+      <Chip label="ReactJS" color='secondary' varient="text" />
+      <Chip label="Redux" color='secondary' varient="text" />
+      <Chip label="REST API" color='secondary' varient="text" />
+      <Chip label="CSS3" color='secondary' varient="text" />
+      <Chip label="HTML5" color='secondary' varient="text" />
+      <Chip label="SCSS" color='secondary' varient="text" />
+      </Stack>
+
+      <Stack sx={{ mt: 2, mb: 2 }} direction="row" spacing={2}>
+
+      <Chip label="Bootstrap" color='secondary' varient="text" />
+      <Chip label="Github" color='secondary' varient="text" />
+      <Chip label="figma" color='secondary' varient="text" />
+      <Chip label="adobe XD" color='secondary' varient="text" />
+      <Chip label="angular" color='secondary' varient="text" />
+      <Chip label="UX design" color='secondary' varient="text" />
+
+     </Stack>
+     <Stack sx={{ mt: 2, mb: 2 }} direction="row" spacing={2}>
+
+      <Chip label="Typescript" color='secondary' varient="text" />
+      <Chip label="Solidity" color='secondary' varient="text" />
+      <Chip label="Ethereum" color='secondary' varient="text" />
+      <Chip label=" web3.js" color='secondary' varient="text" />
+      <Chip label="api integration" color='secondary' varient="text" />
+      <Chip label="UX design" color='secondary' varient="text" />
+
+     </Stack>
       </Container>
       {/* End hero unit */}
        
@@ -97,10 +101,10 @@ export default function App() {
         <Grid container spacing={4} justifyContent="space-evenly">
              <Grid item xs={6} sm={3}  >
                
-             <Link to={`portfolio`}>             <Button style={{  textDecoration: 'none'}} color="secondary" size="large" component="label" variant="text" startIcon={<Face3Icon />}>portfolio</Button>
+             <Button color="secondary" size="large" component="label" variant="text" startIcon={<Face3Icon />}>
+             <Link to={`/`}>Go To Home</Link>
 
-</Link>
-
+</Button>
               
             </Grid>
           
